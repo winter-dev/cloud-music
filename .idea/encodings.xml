@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/cloud-music-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-generator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-order/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-redis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-user/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-music-user/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

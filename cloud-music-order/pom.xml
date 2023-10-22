@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.cloud.music</groupId>
+        <artifactId>cloud-music</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>cloud-music-order</artifactId>
+    <version>${cloud.music.version}</version>
+    <name>cloud-music-order</name>
+    <description>cloud-music-order for Spring Boot</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.cloud.music</groupId>
+            <artifactId>cloud-music-core</artifactId>
+            <version>${cloud.music.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <!-- 指定配置文件所在的resource目录 -->
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.jks</include>
+                    <include>**/*.cer</include>
+                    <include>**/*.xlsx</include>
+                    <include>**/*.docx</include>
+                    <include>**/*.doc</include>
+                    <include>**/*.properties</include>
+                    <include>**/*.pem</include>
+                    <include>**/*.txt</include>
+                    <include>**/*.bak</include>
+                    <include>**/*.json</include>
+                    <include>**/*.vm</include>
+                    <include>**/*.ttf</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+</project>
