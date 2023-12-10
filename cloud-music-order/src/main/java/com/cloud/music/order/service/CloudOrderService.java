@@ -1,7 +1,9 @@
 package com.cloud.music.order.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.cloud.music.common.utils.R;
 import com.cloud.music.order.entity.CloudOrder;
+import com.cloud.music.order.entity.param.OrderParam;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.cloud.music.order.entity.CloudOrder;
  */
 public interface CloudOrderService extends IService<CloudOrder> {
 
+    R<String> create(OrderParam order);
 }

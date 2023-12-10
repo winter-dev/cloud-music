@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -29,7 +30,7 @@ public class CloudOrder implements Serializable {
 
     private static final long serialVersionUID = -1304163222799827441L;
     @ApiModelProperty(value = "id")
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.INPUT)
     private String id;
 
     @ApiModelProperty(value = "订单号")
@@ -37,6 +38,9 @@ public class CloudOrder implements Serializable {
 
     @ApiModelProperty(value = "用户id")
     private String userId;
+
+    @ApiModelProperty(value = "备注")
+    private String remark;
 
     @ApiModelProperty(value = "金额")
     private BigDecimal amount;

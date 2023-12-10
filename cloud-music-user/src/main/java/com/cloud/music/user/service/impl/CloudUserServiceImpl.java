@@ -5,20 +5,20 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cloud.music.common.constant.CacheConstants;
+import com.cloud.music.common.exception.BusinessException;
+import com.cloud.music.common.utils.Convert;
+import com.cloud.music.common.utils.IpUtils;
+import com.cloud.music.common.utils.StringUtils;
+import com.cloud.music.core.entity.CloudUser;
 import com.cloud.music.core.model.LoginUser;
 import com.cloud.music.core.model.PageParam;
 import com.cloud.music.core.security.SecurityUtils;
 import com.cloud.music.core.security.service.TokenService;
-import com.cloud.music.common.exception.BusinessException;
 import com.cloud.music.core.snowflake.SnowFlakeIdWorker;
 import com.cloud.music.redis.service.RedisService;
-import com.cloud.music.core.entity.CloudUser;
 import com.cloud.music.user.form.LoginBody;
 import com.cloud.music.user.mapper.CloudUserMapper;
 import com.cloud.music.user.service.CloudUserService;
-import com.cloud.music.common.utils.Convert;
-import com.cloud.music.common.utils.IpUtils;
-import com.cloud.music.common.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -67,6 +67,7 @@ public class CloudUserServiceImpl extends ServiceImpl<CloudUserMapper, CloudUser
             throw new BusinessException("User already exists");
         user.setPassword(SecurityUtils.encryptPassword(user.getPassword()));
         user.setId(worker.nextId());
+        user.setStatus(0);
         this.save(user);
     }
 

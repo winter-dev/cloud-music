@@ -448,4 +448,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         }
         return sb.toString();
     }
+
+    public static synchronized String randomInt(int bit) {
+        int r = (int) ((Math.random() * bit + 1) * 100000);
+        return String.valueOf(r);
+    }
 }

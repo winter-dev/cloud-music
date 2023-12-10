@@ -3,12 +3,12 @@ package com.cloud.music.order.controller;
 
 import com.cloud.music.common.utils.R;
 import com.cloud.music.core.entity.CloudUser;
+import com.cloud.music.order.entity.CloudOrder;
+import com.cloud.music.order.entity.param.OrderParam;
 import com.cloud.music.order.feigin.RemoteUserService;
+import com.cloud.music.order.service.CloudOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -22,12 +22,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/order")
 public class CloudOrderController {
 
+
     @Autowired
-    private RemoteUserService remoteUserService;
+    private CloudOrderService orderService;
+
+    @PostMapping("/create")
+    public R<String> create(@RequestBody OrderParam order) {
+        return orderService.create(order);
+    }
 
     @GetMapping("/{id}")
-    public R<CloudUser> getOrder(@PathVariable String id) {
-        return remoteUserService.getUserById(id);
+    public R<CloudOrder> getOrder(@PathVariable String id) {
+        return R.ok(orderService.getById(id));
     }
 }
 

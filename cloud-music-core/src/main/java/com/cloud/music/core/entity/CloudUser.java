@@ -25,10 +25,11 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("t_cloud_user")
-@ApiModel(value="CloudUser对象", description="用户表")
+@ApiModel(value = "CloudUser对象", description = "用户表")
 public class CloudUser implements Serializable {
 
 
+    private static final long serialVersionUID = -3586893238841265533L;
     @ApiModelProperty(value = "id")
     @TableId(value = "id", type = IdType.INPUT)
     private String id;
@@ -46,5 +47,6 @@ public class CloudUser implements Serializable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
-
+    @ApiModelProperty(value = "用户状态,0:正常,1:禁用")
+    private Integer status;
 }

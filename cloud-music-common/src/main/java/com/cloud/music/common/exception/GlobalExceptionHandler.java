@@ -62,7 +62,7 @@ public class GlobalExceptionHandler {
     public R<String> handleRuntimeException(RuntimeException e, HttpServletRequest request) {
         String requestURI = request.getRequestURI();
         log.error("请求地址'{}',发生未知异常.", requestURI, e);
-        return R.fail(500, e.getMessage());
+        return R.fail(500, "系统异常，请联系客服");
     }
 
     /**
